@@ -13,6 +13,10 @@
 		AE66B9DD1DB758D0007B4EFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE66B9DB1DB758D0007B4EFD /* Main.storyboard */; };
 		AE66B9E81DB758D0007B4EFD /* XEBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE66B9E71DB758D0007B4EFD /* XEBoxTests.swift */; };
 		AE66B9F31DB758D0007B4EFD /* XEBoxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE66B9F21DB758D0007B4EFD /* XEBoxUITests.swift */; };
+		AE66BA071DB75920007B4EFD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE66BA061DB75920007B4EFD /* Cocoa.framework */; };
+		AE66BA0C1DB75920007B4EFD /* SourceEditorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE66BA0B1DB75920007B4EFD /* SourceEditorExtension.swift */; };
+		AE66BA0E1DB75920007B4EFD /* SourceEditorCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE66BA0D1DB75920007B4EFD /* SourceEditorCommand.swift */; };
+		AE66BA121DB75920007B4EFD /* XEBox Extensions.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AE66BA041DB75920007B4EFD /* XEBox Extensions.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +34,28 @@
 			remoteGlobalIDString = AE66B9D11DB758D0007B4EFD;
 			remoteInfo = XEBox;
 		};
+		AE66BA101DB75920007B4EFD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE66B9CA1DB758D0007B4EFD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE66BA031DB75920007B4EFD;
+			remoteInfo = "XEBox Extensions";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AE66BA161DB75920007B4EFD /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				AE66BA121DB75920007B4EFD /* XEBox Extensions.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		AE66B9D21DB758D0007B4EFD /* XEBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XEBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +70,12 @@
 		AE66B9EE1DB758D0007B4EFD /* XEBoxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XEBoxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE66B9F21DB758D0007B4EFD /* XEBoxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XEBoxUITests.swift; sourceTree = "<group>"; };
 		AE66B9F41DB758D0007B4EFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE66BA041DB75920007B4EFD /* XEBox Extensions.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "XEBox Extensions.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE66BA061DB75920007B4EFD /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		AE66BA0A1DB75920007B4EFD /* XEBox_Extensions.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XEBox_Extensions.entitlements; sourceTree = "<group>"; };
+		AE66BA0B1DB75920007B4EFD /* SourceEditorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorExtension.swift; sourceTree = "<group>"; };
+		AE66BA0D1DB75920007B4EFD /* SourceEditorCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorCommand.swift; sourceTree = "<group>"; };
+		AE66BA0F1DB75920007B4EFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +100,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AE66BA011DB75920007B4EFD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE66BA071DB75920007B4EFD /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -78,6 +117,8 @@
 				AE66B9D41DB758D0007B4EFD /* XEBox */,
 				AE66B9E61DB758D0007B4EFD /* XEBoxTests */,
 				AE66B9F11DB758D0007B4EFD /* XEBoxUITests */,
+				AE66BA081DB75920007B4EFD /* XEBox Extensions */,
+				AE66BA051DB75920007B4EFD /* Frameworks */,
 				AE66B9D31DB758D0007B4EFD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,6 +129,7 @@
 				AE66B9D21DB758D0007B4EFD /* XEBox.app */,
 				AE66B9E31DB758D0007B4EFD /* XEBoxTests.xctest */,
 				AE66B9EE1DB758D0007B4EFD /* XEBoxUITests.xctest */,
+				AE66BA041DB75920007B4EFD /* XEBox Extensions.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -122,6 +164,33 @@
 			path = XEBoxUITests;
 			sourceTree = "<group>";
 		};
+		AE66BA051DB75920007B4EFD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE66BA061DB75920007B4EFD /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE66BA081DB75920007B4EFD /* XEBox Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AE66BA0B1DB75920007B4EFD /* SourceEditorExtension.swift */,
+				AE66BA0D1DB75920007B4EFD /* SourceEditorCommand.swift */,
+				AE66BA0F1DB75920007B4EFD /* Info.plist */,
+				AE66BA091DB75920007B4EFD /* Supporting Files */,
+			);
+			path = "XEBox Extensions";
+			sourceTree = "<group>";
+		};
+		AE66BA091DB75920007B4EFD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AE66BA0A1DB75920007B4EFD /* XEBox_Extensions.entitlements */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,10 +201,12 @@
 				AE66B9CE1DB758D0007B4EFD /* Sources */,
 				AE66B9CF1DB758D0007B4EFD /* Frameworks */,
 				AE66B9D01DB758D0007B4EFD /* Resources */,
+				AE66BA161DB75920007B4EFD /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				AE66BA111DB75920007B4EFD /* PBXTargetDependency */,
 			);
 			name = XEBox;
 			productName = XEBox;
@@ -178,6 +249,23 @@
 			productReference = AE66B9EE1DB758D0007B4EFD /* XEBoxUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		AE66BA031DB75920007B4EFD /* XEBox Extensions */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE66BA131DB75920007B4EFD /* Build configuration list for PBXNativeTarget "XEBox Extensions" */;
+			buildPhases = (
+				AE66BA001DB75920007B4EFD /* Sources */,
+				AE66BA011DB75920007B4EFD /* Frameworks */,
+				AE66BA021DB75920007B4EFD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "XEBox Extensions";
+			productName = "XEBox Extensions";
+			productReference = AE66BA041DB75920007B4EFD /* XEBox Extensions.appex */;
+			productType = "com.apple.product-type.xcode-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -205,6 +293,11 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = AE66B9D11DB758D0007B4EFD;
 					};
+					AE66BA031DB75920007B4EFD = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = YMZ2R5RGSC;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = AE66B9CD1DB758D0007B4EFD /* Build configuration list for PBXProject "XEBox" */;
@@ -223,6 +316,7 @@
 				AE66B9D11DB758D0007B4EFD /* XEBox */,
 				AE66B9E21DB758D0007B4EFD /* XEBoxTests */,
 				AE66B9ED1DB758D0007B4EFD /* XEBoxUITests */,
+				AE66BA031DB75920007B4EFD /* XEBox Extensions */,
 			);
 		};
 /* End PBXProject section */
@@ -245,6 +339,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		AE66B9EC1DB758D0007B4EFD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE66BA021DB75920007B4EFD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -279,6 +380,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AE66BA001DB75920007B4EFD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE66BA0C1DB75920007B4EFD /* SourceEditorExtension.swift in Sources */,
+				AE66BA0E1DB75920007B4EFD /* SourceEditorCommand.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -291,6 +401,11 @@
 			isa = PBXTargetDependency;
 			target = AE66B9D11DB758D0007B4EFD /* XEBox */;
 			targetProxy = AE66B9EF1DB758D0007B4EFD /* PBXContainerItemProxy */;
+		};
+		AE66BA111DB75920007B4EFD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE66BA031DB75920007B4EFD /* XEBox Extensions */;
+			targetProxy = AE66BA101DB75920007B4EFD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -399,7 +514,9 @@
 		AE66B9F81DB758D0007B4EFD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = YMZ2R5RGSC;
 				INFOPLIST_FILE = XEBox/Info.plist;
@@ -413,7 +530,9 @@
 		AE66B9F91DB758D0007B4EFD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = YMZ2R5RGSC;
 				INFOPLIST_FILE = XEBox/Info.plist;
@@ -486,6 +605,40 @@
 			};
 			name = Release;
 		};
+		AE66BA141DB75920007B4EFD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "XEBox Extensions/XEBox_Extensions.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = YMZ2R5RGSC;
+				INFOPLIST_FILE = "XEBox Extensions/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.robinlu.XEBox.XEBox-Extensions";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		AE66BA151DB75920007B4EFD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "XEBox Extensions/XEBox_Extensions.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = YMZ2R5RGSC;
+				INFOPLIST_FILE = "XEBox Extensions/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.robinlu.XEBox.XEBox-Extensions";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -505,6 +658,7 @@
 				AE66B9F91DB758D0007B4EFD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AE66B9FA1DB758D0007B4EFD /* Build configuration list for PBXNativeTarget "XEBoxTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +667,7 @@
 				AE66B9FC1DB758D0007B4EFD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AE66B9FD1DB758D0007B4EFD /* Build configuration list for PBXNativeTarget "XEBoxUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +676,16 @@
 				AE66B9FF1DB758D0007B4EFD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE66BA131DB75920007B4EFD /* Build configuration list for PBXNativeTarget "XEBox Extensions" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE66BA141DB75920007B4EFD /* Debug */,
+				AE66BA151DB75920007B4EFD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
