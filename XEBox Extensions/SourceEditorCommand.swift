@@ -67,6 +67,9 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         if let range = invocation.buffer.selections[0] as? XCSourceTextRange {
             if let currentLine = invocation.buffer.lines[range.start.line] as? String {
                 if let result = quoteRegex.matches(in: currentLine, options: [], range: currentLine.fullRange).last {
+                    guard result.range.location != NSNotFound else {
+                        return
+                    }
                     let quote = (currentLine as NSString).substring(with: result.range)
                     let newQuote = "NSLocalizedString(\(quote), comment:\(quote))"
                     let newLine = (currentLine as NSString).replacingOccurrences(of: quote, with: newQuote, options: [], range: result.range)
@@ -90,6 +93,9 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
             for i in (0..<range.start.line).reversed() {
                 if let lineContent = invocation.buffer.lines[i] as? String {
                     if let result = endBraceRegex.matches(in: lineContent, options: [], range: lineContent.fullRange).last {
+                        guard result.range.location != NSNotFound else {
+                            return
+                        }
                         let braceLine = (lineContent as NSString).substring(with: result.range)
                         let remain = (lineContent as NSString).replacingOccurrences(of: braceLine, with: "", options: [], range: result.range)
                         var replaceRange = NSRange(location: i, length: 1)
@@ -142,6 +148,9 @@ extension String {
     func positionOfFirstNonSpace() -> Int? {
         let nonSpaceRegex = try! NSRegularExpression(pattern: "\\S", options: [])
         if let result = nonSpaceRegex.firstMatch(in: self, options: [], range: self.fullRange) {
+            guard result.range.location != NSNotFound else {
+                return nil
+            }
             return result.range.location
         }
         return nil
