@@ -1,4 +1,4 @@
-# XEBox - Xcode source editor extension toolbox
+# XEBox - an Xcode source editor extension toolbox
 
 [![Platform](https://img.shields.io/badge/xcode-8-blue.svg?style=flat)](https://developer.apple.com/xcode/)
 [![Swift 3](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
