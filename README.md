@@ -1,5 +1,10 @@
 # XEBox - Xcode source editor extension toolbox
 
+[![Platform](https://img.shields.io/badge/xcode-8-blue.svg?style=flat)](https://developer.apple.com/xcode/)
+[![Swift 3](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
+[![License](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](http://mit-license.org)
+[![Twitter](https://img.shields.io/badge/twitter-@robinlu-blue.svg?style=flat)](http://twitter.com/robinlu)
+
 XEBox is a collection of Xcode source editor extensions I made for swift coding, which including:
 * Import for me
 * Turn to NSLocalizedString
@@ -33,3 +38,9 @@ This one moves the selected codes up into the nearest braces.
 4. Build and run.
 5. You may need to enable the extension from  -> System Preferences -> Extensions -> Xcode Source Editor
 6. You will find the command in the Editor Menu.
+
+## Author
+[Lu Yibin](http://robin.github.io)
+
+## License
+LYTabView is available under the MIT license. See the LICENSE file for more info.
