@@ -90,7 +90,13 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         let endBraceRegex = try! NSRegularExpression(pattern: "\\s*\\}\\s*(//.*)?$", options: [])
         if let range = invocation.buffer.selections[0] as? XCSourceTextRange {
             let selectedRange = NSRange(location: range.start.line, length: range.end.line - range.start.line+1)
-            let prefix = invocation.buffer.indentation()
+            let prefix : String = {
+                if invocation.buffer.usesTabsForIndentation {
+                    return "\t"
+                } else {
+                    return String(repeating: " ", count: invocation.buffer.indentationWidth)
+                }
+            }()
             let selectedLines = invocation.buffer.lines.subarray(with: selectedRange).map({ (line) -> String in
                 return "\(prefix)\(line)"
             })
@@ -136,15 +142,6 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
     }
 }
 
-extension XCSourceTextBuffer {
-    func indentation(n:Int = 1) -> String {
-        if self.usesTabsForIndentation {
-            return String(repeating: "\t", count: n)
-        } else {
-            return String(repeating: " ", count: self.indentationWidth * n)
-        }
-    }
-}
 extension String {
     var fullRange: NSRange {
         return NSRange(location: 0, length: characters.count)

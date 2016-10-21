@@ -42,7 +42,7 @@
 					<key>XCSourceEditorCommandIdentifier</key>
 					<string>$(PRODUCT_BUNDLE_IDENTIFIER).LocalizeString</string>
 					<key>XCSourceEditorCommandName</key>
-					<string>Turn to LocalizedString</string>
+					<string>Turn to NSLocalizedString</string>
 				</dict>
 				<dict>
 					<key>XCSourceEditorCommandClassName</key>
