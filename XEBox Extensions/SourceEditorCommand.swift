@@ -66,12 +66,21 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
             }
         }
     }
-    
+
     func localizingString(with invocation: XCSourceEditorCommandInvocation) {
-        let quoteRegex = try! NSRegularExpression(pattern: "([\"'])(?:(?=(\\\\?))\\2.)*?\\1", options: [])
+        let quoteRegex = try! NSRegularExpression(pattern: "([\"])(?:(?=(\\\\?))\\2.)*?\\1", options: [])
         if let range = invocation.buffer.selections[0] as? XCSourceTextRange {
             if let currentLine = invocation.buffer.lines[range.start.line] as? String {
-                if let result = quoteRegex.matches(in: currentLine, options: [], range: currentLine.fullRange).last {
+                var nearestResult : NSTextCheckingResult? = nil
+                for result in quoteRegex.matches(in: currentLine, options: [], range: currentLine.fullRange) {
+                    if result.range.location == NSNotFound {
+                        break;
+                    }
+                    if nearestResult == nil || (DistanceToNSRange(location: range.start.column, range: nearestResult!.range) > DistanceToNSRange(location: range.start.column, range: result.range)) {
+                        nearestResult = result
+                    }
+                }
+                if let result = nearestResult {
                     guard result.range.location != NSNotFound else {
                         return
                     }
@@ -132,7 +141,7 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
                     newLine.insert(contentsOf: " {".characters, at: newLine.index(before: newLine.endIndex))
                     let indent = currentLine.substring(to: idx)
                     let replaceRange = NSRange(location: range.start.line, length: 1)
-                    invocation.buffer.lines.replaceObjects(in: replaceRange, withObjectsFrom: [newLine,"\n","\(indent)}"])
+                    invocation.buffer.lines.replaceObjects(in: replaceRange, withObjectsFrom: [newLine,"\(indent)\(indent)<#code#>\n","\(indent)}"])
                     let start = XCSourceTextPosition(line: range.start.line, column: newLine.characters.count - 2)
                     let newSelection = XCSourceTextRange(start: start, end: start)
                     invocation.buffer.selections.replaceObject(at: 0, with: newSelection)
@@ -140,6 +149,10 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
             }
         }
     }
+}
+
+func DistanceToNSRange(location:Int, range:NSRange) -> Int {
+    return min(abs(location - range.location), abs(location - (range.location + range.length)));
 }
 
 extension String {
