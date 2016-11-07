@@ -6,10 +6,10 @@
 [![Twitter](https://img.shields.io/badge/twitter-@robinlu-blue.svg?style=flat)](http://twitter.com/robinlu)
 
 XEBox is a collection of Xcode source editor extensions I made for swift coding, which including:
-* Import for me
 * Turn to NSLocalizedString
 * Move up into braces
 * Turn to optional binding
+* Import for me
 
 ## Turn to NSLocalizedString
 Type a quoted string and turn it into the form of:
